@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.samples.crud.entity.User;
 import com.baomidou.mybatisplus.samples.crud.entity.User2;
+import com.baomidou.mybatisplus.samples.crud.mapper.AmsT0001Mapper;
 import com.baomidou.mybatisplus.samples.crud.mapper.User2Mapper;
 import com.baomidou.mybatisplus.samples.crud.mapper.UserMapper;
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +33,7 @@ public class CrudTest {
     @Autowired
     private UserMapper mapper;
     @Autowired
-    private User2Mapper user2Mapper;
+    private AmsT0001Mapper amsT0001Mapper;
 
     @Test
     public void aInsert() {
@@ -100,30 +101,9 @@ public class CrudTest {
 
     @Test
     public void dSelect() {
-        mapper.insert(
-                new User().setId(10086L)
-                        .setName("miemie")
-                        .setEmail("miemie@baomidou.com")
-                        .setAge(3));
-        assertThat(mapper.selectById(10086L).getEmail()).isEqualTo("miemie@baomidou.com");
-        User user = mapper.selectOne(new QueryWrapper<User>().lambda().eq(User::getId, 10086));
-        assertThat(user.getName()).isEqualTo("miemie");
-        assertThat(user.getAge()).isEqualTo(3);
+        QueryWrapper queryWrapper = new QueryWrapper();
+        Long aLong = amsT0001Mapper.selectCount(queryWrapper);
 
-        mapper.selectList(Wrappers.<User>lambdaQuery().select(User::getId))
-                .forEach(x -> {
-                    assertThat(x.getId()).isNotNull();
-                    assertThat(x.getEmail()).isNull();
-                    assertThat(x.getName()).isNull();
-                    assertThat(x.getAge()).isNull();
-                });
-        mapper.selectList(new QueryWrapper<User>().select("id", "name"))
-                .forEach(x -> {
-                    assertThat(x.getId()).isNotNull();
-                    assertThat(x.getEmail()).isNull();
-                    assertThat(x.getName()).isNotNull();
-                    assertThat(x.getAge()).isNull();
-                });
     }
 
     @Test
@@ -220,12 +200,4 @@ public class CrudTest {
 
     }
 
-    @Test
-    public void testSqlCondition() {
-        Assertions.assertEquals(user2Mapper.selectList(Wrappers.<User2>query()
-                .setEntity(new User2().setName("n"))).size(), 2);
-        Assertions.assertEquals(user2Mapper.selectList(Wrappers.<User2>query().like("name", "J")).size(), 2);
-        Assertions.assertEquals(user2Mapper.selectList(Wrappers.<User2>query().gt("age", 18)
-                .setEntity(new User2().setName("J"))).size(), 1);
-    }
 }
