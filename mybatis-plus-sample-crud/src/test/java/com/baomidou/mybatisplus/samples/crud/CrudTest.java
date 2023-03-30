@@ -5,16 +5,27 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.samples.crud.entity.AmsT0001;
 import com.baomidou.mybatisplus.samples.crud.entity.User;
 import com.baomidou.mybatisplus.samples.crud.entity.User2;
 import com.baomidou.mybatisplus.samples.crud.mapper.AmsT0001Mapper;
 import com.baomidou.mybatisplus.samples.crud.mapper.User2Mapper;
 import com.baomidou.mybatisplus.samples.crud.mapper.UserMapper;
+import com.baomidou.mybatisplus.samples.crud.service.IAmsT0001Service;
+import com.baomidou.mybatisplus.samples.crud.utils.CSVUtils;
+import com.baomidou.mybatisplus.samples.crud.utils.CsvUtil;
+import net.minidev.json.JSONUtil;
+import org.apache.commons.collections4.ListUtils;
+import org.assertj.core.util.Lists;
+import org.h2.util.json.JSONNull;
+import org.h2.util.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +45,9 @@ public class CrudTest {
     private UserMapper mapper;
     @Autowired
     private AmsT0001Mapper amsT0001Mapper;
+
+    @Autowired
+    private IAmsT0001Service amsT0001Service;
 
     @Test
     public void aInsert() {
@@ -104,7 +118,29 @@ public class CrudTest {
         QueryWrapper queryWrapper = new QueryWrapper();
         Long aLong = amsT0001Mapper.selectCount(queryWrapper);
 
+        long count = amsT0001Service.count();
+        System.out.println(count);
+
     }
+
+
+    @Test
+    public void dReadCsvToBean() {
+        String path = "C:\\workspace\\data_files\\007\\AMS_T0001_DATA_20w.csv";
+        File file = new File(path);
+        List<AmsT0001> csvData = CsvUtil.getCsvData(file, AmsT0001.class);
+        AmsT0001 amsT0001 = csvData.get(0);
+        String s = amsT0001.toString();
+        System.out.println(s);
+        List<List<AmsT0001>> partition = ListUtils.partition(csvData, 5000);
+        for (List<AmsT0001> amsT0001s : partition) {
+            amsT0001Service.saveBatch(amsT0001s);
+        }
+        // 批量插入
+        System.out.println(csvData);
+
+    }
+
 
     @Test
     public void orderBy() {

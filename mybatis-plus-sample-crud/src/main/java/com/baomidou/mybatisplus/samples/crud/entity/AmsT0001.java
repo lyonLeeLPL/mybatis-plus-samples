@@ -1,5 +1,7 @@
 package com.baomidou.mybatisplus.samples.crud.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -20,806 +22,967 @@ public class AmsT0001 implements Serializable {
     /**
      * タイムスタンプ
      */
+    @TableField("zztimestamp")
     private String zztimestamp;
 
     /**
      * 行番号
      */
+    @TableField("zzline")
     private Integer zzline;
 
     /**
      * 処理ステップ
      */
+    @TableField("zzpr_step")
     private String zzprStep;
 
     /**
      * マスタモデル
      */
+    @TableField("zzmaster_mod")
     private String zzmasterMod;
 
     /**
      * レガシシステムキー (ビジネスパートナ)
      */
+    @TableField("zzoldkey_bp")
     private String zzoldkeyBp;
 
     /**
      * レガシシステムキー (契約アカウント：集約)
      */
+    @TableField("zzoldkey_cac")
     private String zzoldkeyCac;
 
     /**
      * レガシシステムキー (契約アカウント)
      */
+    @TableField("zzoldkey_ca")
     private String zzoldkeyCa;
 
     /**
      * レガシシステムキー (供給対象)
      */
+    @TableField("zzoldkey_co")
     private String zzoldkeyCo;
 
     /**
      * レガシシステムキー (需要場所)
      */
+    @TableField("zzoldkey_pr")
     private String zzoldkeyPr;
 
     /**
      * レガシシステムキー (インストレーション)
      */
+    @TableField("zzoldkey_in")
     private String zzoldkeyIn;
 
     /**
      * レガシシステムキー (インストレーションファクト)
      */
+    @TableField("zzoldkey_inf")
     private String zzoldkeyInf;
 
     /**
      * レガシシステムキー (装置情報レコード)
      */
+    @TableField("zzoldkey_dv")
     private String zzoldkeyDv;
 
     /**
      * レガシシステムキー (装置取付)
      */
+    @TableField("zzoldkey_dvm")
     private String zzoldkeyDvm;
 
     /**
      * レガシシステムキー (契約)
      */
+    @TableField("zzoldkey_ct")
     private String zzoldkeyCt;
 
     /**
      * レガシシステムキー (プロファイルヘッダ)
      */
+    @TableField("zzoldkey_pf")
     private String zzoldkeyPf;
 
     /**
      * レガシシステムキー (プロファイル割当)
      */
+    @TableField("zzoldkey_pa")
     private String zzoldkeyPa;
 
     /**
      * 登録成功フラグ (インストレーションファクト)
      */
+    @TableField("zzflg_inf")
     private String zzflgInf;
 
     /**
      * 登録成功フラグ (装置情報レコード)
      */
+    @TableField("zzflg_dv")
     private String zzflgDv;
 
     /**
      * 登録成功フラグ (装置取付)
      */
+    @TableField("zzflg_dvm")
     private String zzflgDvm;
 
     /**
      * 登録成功フラグ (プロファイルヘッダ)
      */
+    @TableField("zzflg_pf")
     private String zzflgPf;
 
     /**
      * 登録成功フラグ (プロファイル割当)
      */
+    @TableField("zzflg_pa")
     private String zzflgPa;
 
     /**
      * 供給停止伝票番号
      */
+    @TableField("zzdoc_no")
     private String zzdocNo;
 
     /**
      * ホスト: ビジネスパートナ
      */
+    @TableField("zzpartner_h")
     private String zzpartnerH;
 
     /**
      * ホスト: 集約契約アカウント
      */
+    @TableField("zzabwvk_h")
     private String zzabwvkH;
 
     /**
      * 契約内容通知の連続番号
      */
+    @TableField("zzzkeithuno")
     private String zzzkeithuno;
 
     /**
      * 料金計算月
      */
+    @TableField("zzbill_pid")
     private String zzbillPid;
 
     /**
      * ビジネスパートナ
      */
+    @TableField("zzpartner")
     private String zzpartner;
 
     /**
      * 集約契約アカウント
      */
+    @TableField("zzabwvk")
     private String zzabwvk;
 
     /**
      * 契約アカウント
      */
+    @TableField("zzvkont")
     private String zzvkont;
 
     /**
      * 契約
      */
+    @TableField("vertrag")
     private String vertrag;
 
     /**
      * インストレーション
      */
+    @TableField("anlage")
     private String anlage;
 
     /**
      * 需要場所
      */
+    @TableField("vstelle")
     private String vstelle;
 
     /**
      * 供給対象
      */
+    @TableField("haus")
     private String haus;
 
     /**
      * 検索語句 1/2(左)
      */
+    @TableField("zzbu_sort1")
     private String zzbuSort1;
 
     /**
      * 名称
      */
+    @TableField("zzname_org1")
     private String zznameOrg1;
 
     /**
      * 郵便番号
      */
+    @TableField("zzpost_code1")
     private String zzpostCode1;
 
     /**
      * 住所カナ
      */
+    @TableField("zzstreet_i")
     private String zzstreetI;
 
     /**
      * 地名
      */
+    @TableField("zzstreet")
     private String zzstreet;
 
     /**
      * 建物コード
      */
+    @TableField("zzbuilding")
     private String zzbuilding;
 
     /**
      * 地名３
      */
+    @TableField("zzstr_suppl2")
     private String zzstrSuppl2;
 
     /**
      * 気付
      */
+    @TableField("zzname_co")
     private String zznameCo;
 
     /**
      * 第1電話番号の市外局番
      */
+    @TableField("zztel_no_f1")
     private String zztelNoF1;
 
     /**
      * 第1電話番号の市内局番
      */
+    @TableField("zztel_no_f2")
     private String zztelNoF2;
 
     /**
      * 第1電話番号の加入者番号
      */
+    @TableField("zztel_no_f3")
     private String zztelNoF3;
 
     /**
      * 第2電話番号の市外局番
      */
+    @TableField("zztel_no_m1")
     private String zztelNoM1;
 
     /**
      * 第2電話番号の市内局番
      */
+    @TableField("zztel_no_m2")
     private String zztelNoM2;
 
     /**
      * 第2電話番号の加入者番号
      */
+    @TableField("zztel_no_m3")
     private String zztelNoM3;
 
     /**
      * 外部アドレス番号
      */
+    @TableField("zzadext")
     private String zzadext;
 
     /**
      * 銀行コード
      */
+    @TableField("zzbankl")
     private String zzbankl;
 
     /**
      * 銀行口座
      */
+    @TableField("zzbankn")
     private String zzbankn;
 
     /**
      * 管理キー
      */
+    @TableField("zzbkont")
     private String zzbkont;
 
     /**
      * 口座名義人
      */
+    @TableField("zzkoinh")
     private String zzkoinh;
 
     /**
      * Type
      */
+    @TableField("zzccins")
     private String zzccins;
 
     /**
      * カード番号
      */
+    @TableField("zzccnum")
     private String zzccnum;
 
     /**
      * 支払条件
      */
+    @TableField("zzzahlkond")
     private String zzzahlkond;
 
     /**
      * 個別請求書発行希望
      */
+    @TableField("zzflgccivprt")
     private String zzflgccivprt;
 
     /**
      * 代替BP 出荷管理
      */
+    @TableField("zzsendct_rh")
     private String zzsendctRh;
 
     /**
      * 一括郵送対象外
      */
+    @TableField("zznoctrsnd")
     private String zznoctrsnd;
 
     /**
      * 口座情報出力希望
      */
+    @TableField("zzflgnoprtbk")
     private String zzflgnoprtbk;
 
     /**
      * CA管理区分
      */
+    @TableField("zzcaknr_kbn")
     private String zzcaknrKbn;
 
     /**
      * 入金方法
      */
+    @TableField("zzezawe")
     private String zzezawe;
 
     /**
      * 旧システム契約
      */
+    @TableField("zzvrefer")
     private String zzvrefer;
 
     /**
      * 契約クラス
      */
+    @TableField("zzcontclass")
     private String zzcontclass;
 
     /**
      * 契約開始日（締結日）
      */
+    @TableField("zzcntstr")
     private String zzcntstr;
 
     /**
      * 契約満了予定日
      */
+    @TableField("zzcntend")
     private String zzcntend;
 
     /**
      * 業種コード
      */
+    @TableField("zzbrnche")
     private String zzbrnche;
 
     /**
      * 契約対象
      */
+    @TableField("zztarget")
     private String zztarget;
 
     /**
      * 入札フラグ
      */
+    @TableField("zzbidflg")
     private String zzbidflg;
 
     /**
      * 料金 Cat.
      */
+    @TableField("zztariftyp")
     private String zztariftyp;
 
     /**
      * 供給方式
      */
+    @TableField("zzkykymtd")
     private String zzkykymtd;
 
     /**
      * 検針単位
      */
+    @TableField("zzableinh")
     private String zzableinh;
 
     /**
      * 郵便番号/市区町村(左)
      */
+    @TableField("zzco_postcd1")
     private String zzcoPostcd1;
 
     /**
      * 地名
      */
+    @TableField("zzco_street")
     private String zzcoStreet;
 
     /**
      * 供給ポイント ID
      */
+    @TableField("zzext_ui")
     private String zzextUi;
 
     /**
      * 契約電流
      */
+    @TableField("zzdm_mn_cc")
     private String zzdmMnCc;
 
     /**
      * 契約容量
      */
+    @TableField("zzdm_mn_ca")
     private String zzdmMnCa;
 
     /**
      * 契約電力
      */
+    @TableField("zzdm_mn_lc")
     private String zzdmMnLc;
 
     /**
      * 世帯数
      */
+    @TableField("zzfc_mn_hh")
     private String zzfcMnHh;
 
     /**
      * 手入力加重平均力率
      */
+    @TableField("zzfc_wa_wa")
     private String zzfcWaWa;
 
     /**
      * 契約決定区分
      */
+    @TableField("zzfc_mn_oe")
     private String zzfcMnOe;
 
     /**
      * 時報警報区分
      */
+    @TableField("zzfc_mn_ia")
     private String zzfcMnIa;
 
     /**
      * 最低使用期間開始月
      */
+    @TableField("zzfc_si_01")
     private String zzfcSi01;
 
     /**
      * 停止日
      */
+    @TableField("zzrt_op_bx")
     private String zzrtOpBx;
 
     /**
      * 手入力マイコン(温水器)割引対象機器契約容量
      */
+    @TableField("zzdm_ca_9o")
     private String zzdmCa9o;
 
     /**
      * 手入力マイコン(蓄熱式暖房)割引対象機器契約容量
      */
+    @TableField("zzdm_ca_9p")
     private String zzdmCa9p;
 
     /**
      * 手入力5時間(蓄熱式暖房)割引対象機器契約容量
      */
+    @TableField("zzdm_ca_9q")
     private String zzdmCa9q;
 
     /**
      * 手入力5時間(その他)割引対象機器契約容量
      */
+    @TableField("zzdm_ca_9r")
     private String zzdmCa9r;
 
     /**
      * 手入力非蓄熱式電気暖房割引額1型対象機器の総容量
      */
+    @TableField("zzdm_ca_na")
     private String zzdmCaNa;
 
     /**
      * 手入力非蓄熱式電気暖房割引額2型対象機器の総容量
      */
+    @TableField("zzdm_ca_nb")
     private String zzdmCaNb;
 
     /**
      * 手入力センサー割引対象率・低
      */
+    @TableField("zzfc_ra_ln")
     private String zzfcRaLn;
 
     /**
      * 手入力マイコン割引対象率・低
      */
+    @TableField("zzfc_ra_ml")
     private String zzfcRaMl;
 
     /**
      * 再エネ賦課金減免率
      */
+    @TableField("zzfc_mn_rr")
     private String zzfcMnRr;
 
     /**
      * 手入力基本料金割引額
      */
+    @TableField("zzqt_dg_d1_1")
     private String zzqtDgD11;
 
     /**
      * 需要家口数
      */
+    @TableField("zzdm_mn_cr")
     private String zzdmMnCr;
 
     /**
      * 手入力電灯数(100W超過1)
      */
+    @TableField("zzfc_eb_11")
     private String zzfcEb11;
 
     /**
      * 手入力電灯数(100W超過2)
      */
+    @TableField("zzfc_eb_12")
     private String zzfcEb12;
 
     /**
      * 手入力電灯数(100W超過3)
      */
+    @TableField("zzfc_eb_13")
     private String zzfcEb13;
 
     /**
      * 手入力電灯数(100W超過4)
      */
+    @TableField("zzfc_eb_14")
     private String zzfcEb14;
 
     /**
      * 手入力電灯数(100W超過5)
      */
+    @TableField("zzfc_eb_15")
     private String zzfcEb15;
 
     /**
      * 手入力電灯容量(100W超過1)
      */
+    @TableField("zzfc_eb_21")
     private String zzfcEb21;
 
     /**
      * 手入力電灯容量(100W超過2)
      */
+    @TableField("zzfc_eb_22")
     private String zzfcEb22;
 
     /**
      * 手入力電灯容量(100W超過3)
      */
+    @TableField("zzfc_eb_23")
     private String zzfcEb23;
 
     /**
      * 手入力電灯容量(100W超過4)
      */
+    @TableField("zzfc_eb_24")
     private String zzfcEb24;
 
     /**
      * 手入力電灯容量(100W超過5)
      */
+    @TableField("zzfc_eb_25")
     private String zzfcEb25;
 
     /**
      * 手入力電灯数(10W以下)
      */
+    @TableField("zzfc_eb_01")
     private String zzfcEb01;
 
     /**
      * 手入力電灯数(11～20W)
      */
+    @TableField("zzfc_eb_02")
     private String zzfcEb02;
 
     /**
      * 手入力電灯数(21～40W)
      */
+    @TableField("zzfc_eb_03")
     private String zzfcEb03;
 
     /**
      * 手入力電灯数(41～60W)
      */
+    @TableField("zzfc_eb_04")
     private String zzfcEb04;
 
     /**
      * 手入力電灯数(61～100W)
      */
+    @TableField("zzfc_eb_05")
     private String zzfcEb05;
 
     /**
      * 手入力小型機器数(100VA超過1)
      */
+    @TableField("zzfc_eh_11")
     private String zzfcEh11;
 
     /**
      * 手入力小型機器数(100VA超過2)
      */
+    @TableField("zzfc_eh_12")
     private String zzfcEh12;
 
     /**
      * 手入力小型機器数(100VA超過3)
      */
+    @TableField("zzfc_eh_13")
     private String zzfcEh13;
 
     /**
      * 手入力小型機器数(100VA超過4)
      */
+    @TableField("zzfc_eh_14")
     private String zzfcEh14;
 
     /**
      * 手入力小型機器容量(100VA超過1)
      */
+    @TableField("zzfc_eh_21")
     private String zzfcEh21;
 
     /**
      * 手入力小型機器容量(100VA超過2)
      */
+    @TableField("zzfc_eh_22")
     private String zzfcEh22;
 
     /**
      * 手入力小型機器容量(100VA超過3)
      */
+    @TableField("zzfc_eh_23")
     private String zzfcEh23;
 
     /**
      * 手入力小型機器容量(100VA超過4)
      */
+    @TableField("zzfc_eh_24")
     private String zzfcEh24;
 
     /**
      * 手入力小型機器数(50VA以下)
      */
+    @TableField("zzfc_eh_01")
     private String zzfcEh01;
 
     /**
      * 手入力小型機器数(51～100VA)
      */
+    @TableField("zzfc_eh_02")
     private String zzfcEh02;
 
     /**
      * 外部入力機器レンタル料消費税率
      */
+    @TableField("zzqt_rc_rxa")
     private String zzqtRcRxa;
 
     /**
      * 外部入力物件区分
      */
+    @TableField("zzfc_mn_ota")
     private String zzfcMnOta;
 
     /**
      * 外部入力機器１レンタル料
      */
+    @TableField("zzqt_rc_1ra")
     private String zzqtRc1ra;
 
     /**
      * 外部入力機器２レンタル料
      */
+    @TableField("zzqt_rc_2ra")
     private String zzqtRc2ra;
 
     /**
      * 外部入力機器３レンタル料
      */
+    @TableField("zzqt_rc_3ra")
     private String zzqtRc3ra;
 
     /**
      * 外部入力機器４レンタル料
      */
+    @TableField("zzqt_rc_4ra")
     private String zzqtRc4ra;
 
     /**
      * 外部入力機器５レンタル料
      */
+    @TableField("zzqt_rc_5ra")
     private String zzqtRc5ra;
 
     /**
      * 外部入力機器６レンタル料
      */
+    @TableField("zzqt_rc_6ra")
     private String zzqtRc6ra;
 
     /**
      * 外部入力機器７レンタル料
      */
+    @TableField("zzqt_rc_7ra")
     private String zzqtRc7ra;
 
     /**
      * 外部入力機器８レンタル料
      */
+    @TableField("zzqt_rc_8ra")
     private String zzqtRc8ra;
 
     /**
      * 外部入力合計額
      */
+    @TableField("zzqt_ta_taar")
     private String zzqtTaTaar;
 
     /**
      * 外部入力合計額_消費税等相当額
      */
+    @TableField("zzqt_ta_txar")
     private String zzqtTaTxar;
 
     /**
      * 外部入力合計額_免税額
      */
+    @TableField("zzqt_ta_xfar")
     private String zzqtTaXfar;
 
     /**
      * 外部入力合計額_外税額
      */
+    @TableField("zzqt_en_taar")
     private String zzqtEnTaar;
 
     /**
      * 予定期間１
      */
+    @TableField("zzud_si_01_f")
     private String zzudSi01F;
 
     /**
      * 予定期間１
      */
+    @TableField("zzud_si_01_t")
     private String zzudSi01T;
 
     /**
      * 一世帯電流
      */
+    @TableField("zzdm_mn_uh")
     private String zzdmMnUh;
 
     /**
      * 実使用期間
      */
+    @TableField("zzrt_op_b2")
     private String zzrtOpB2;
 
     /**
      * 実使用期間（有効開始日）
      */
+    @TableField("zzrt_op_b2_f")
     private String zzrtOpB2F;
 
     /**
      * 実使用期間（有効終了日）
      */
+    @TableField("zzrt_op_b2_t")
     private String zzrtOpB2T;
 
     /**
      * eTime3プラン判定区分
      */
+    @TableField("zzetime_ind")
     private String zzetimeInd;
 
     /**
      * 集約CA支払条件
      */
+    @TableField("zzzahlkond_c")
     private String zzzahlkondC;
 
     /**
      * 処理ステータス
      */
+    @TableField("zzproc_stat")
     private String zzprocStat;
 
     /**
      * 予備１
      */
+    @TableField("zzreserve1")
     private String zzreserve1;
 
     /**
      * 予備２
      */
+    @TableField("zzreserve2")
     private String zzreserve2;
 
     /**
      * 予備３
      */
+    @TableField("zzreserve3")
     private String zzreserve3;
 
     /**
      * 予備４
      */
+    @TableField("zzreserve4")
     private String zzreserve4;
 
     /**
      * 予備５
      */
+    @TableField("zzreserve5")
     private String zzreserve5;
 
     /**
      * 予備６
      */
+    @TableField("zzreserve6")
     private String zzreserve6;
 
     /**
      * 予備７
      */
+    @TableField("zzreserve7")
     private String zzreserve7;
 
     /**
      * 予備８
      */
+    @TableField("zzreserve8")
     private String zzreserve8;
 
     /**
      * 予備９
      */
+    @TableField("zzreserve9")
     private String zzreserve9;
 
     /**
      * 予備１０
      */
+    @TableField("zzreserve10")
     private String zzreserve10;
 
     /**
      * バージョン
      */
+    @TableField("version")
     private Integer version;
 
     /**
      * 作成者
      */
+    @TableField("creation_user_id")
     private String creationUserId;
 
     /**
      * 作成日時
      */
+    @TableField("creation_dttm")
     private LocalDateTime creationDttm;
 
     /**
      * 更新者
      */
+    @TableField("updtd_user_id")
     private String updtdUserId;
 
     /**
      * 更新日時
      */
+    @TableField("updtd_dttm")
     private LocalDateTime updtdDttm;
 
     /**
      * 登録更新成功フラグ (ビジネスパートナ)
      */
+    @TableField("zzflg_bp")
     private String zzflgBp;
 
     /**
      * 登録更新成功フラグ (契約アカウント：集約)
      */
+    @TableField("zzflg_cac")
     private String zzflgCac;
 
     /**
      * 昼インストレーション判定結果区分
      */
+    @TableField("zzinind_d")
     private String zzinindD;
 
     /**
      * 夜インストレーション判定結果区分
      */
+    @TableField("zzinind_n")
     private String zzinindN;
 
     public String getZztimestamp() {
